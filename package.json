@@ -1,0 +1,36 @@
+{
+  "name": "angular-todo-e2e",
+  "version": "0.0.1",
+  "description": "A demonstration of e2e test using Jest & Selenium Web Drive, against angular todo app.",
+  "main": "index.js",
+  "scripts": {
+    "jest": "node ./node_modules/jest/bin/jest.js",
+    "cross-env": "node node_modules/cross-env/dist/bin/cross-env",
+    "e2e:firefox": "npm run cross-env TARGET_HOST=http://cburgdorf.github.io/angular-todo-app/ BROWSER=firefox JEST_TIMEOUT=50000 npm run jest",
+    "e2e:firefox:win:report": "npm run e2e:firefox && npm run report:win:firefox",
+    "e2e:chrome": "npm run cross-env TARGET_HOST=http://cburgdorf.github.io/angular-todo-app/ BROWSER=chrome JEST_TIMEOUT=50000 npm run jest",
+    "e2e:chrome:win:report": "npm run e2e:chrome && npm run report:win:chrome",
+    "e2e": "npm run e2e:chrome & npm run e2e:firefox",
+    "report:win:chrome": "start chrome \"test-report.html\"",
+    "report:win:firefox": "start firefox \"test-report.html\""
+  },
+  "keywords": [
+    "e2e",
+    "jest",
+    "seleniumwd",
+    "angularjs"
+  ],
+  "author": "Wendy Sanarwanto (wendy.sanarwanto@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "chromedriver": "^2.38.3",
+    "cross-env": "^5.1.5",
+    "geckodriver": "^1.11.0",
+    "jest": "^22.4.3",
+    "jest-html-reporter": "^2.3.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-html-reporter"
+  }
+}
