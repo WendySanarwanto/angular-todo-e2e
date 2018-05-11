@@ -1,6 +1,6 @@
 # angular-todo-e2e
 
-A demonstration of e2e test using Jest & Selenium Web Drive, against angular todo app.
+A demonstration of e2e test using Jest & Selenium Web Drive, against an [angular todo app demo](http://cburgdorf.github.io/angular-todo-app/#/).
 
 ## 1. Setup environment
 
